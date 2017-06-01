@@ -86,9 +86,6 @@ Vagrant.configure(2) do |config|
     mkdir -p /vagrant/image
     ln -s /vagrant/download download
     ln -s /vagrant/image temp
-    export PATH="$PATH:/sbin:/usr/sbin"
-    #sudo -u vagrant screen -dmS build sudo bash -c 'export PATH="$PATH:/sbin:/usr/sbin";cd /home/vagrant/treehouse-builder;./treehouse-builder --chroot'
-    sudo -u vagrant screen -dmS build sudo bash 
-    #-c 'export PATH="$PATH:/sbin:/usr/sbin";cd /home/vagrant/treehouse-builder;./treehouse-builder --chroot'
+    sudo -u vagrant screen -dmS build sudo bash -c 'export PATH="$PATH:/sbin:/usr/sbin";cd /home/vagrant/treehouse-builder;./treehouse-builder --chroot'
   SHELL
 end
