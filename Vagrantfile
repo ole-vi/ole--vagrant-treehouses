@@ -82,10 +82,9 @@ Vagrant.configure(2) do |config|
     sudo aptitude install -y kpartx qemu-user-static parted
     git clone https://github.com/ole-vi/treehouse-builder.git
     cd treehouse-builder/
-    mkdir -p /vagrant/download
-    mkdir -p /vagrant/image
-    ln -s /vagrant/download download
-    ln -s /vagrant/image temp
+    #git checkout <branch>
+    mkdir -p /vagrant/images
+    ln -s /vagrant/images images
     sudo -u vagrant screen -dmS build sudo bash -c 'export PATH="$PATH:/sbin:/usr/sbin";cd /home/vagrant/treehouse-builder;./treehouse-builder --chroot'
   SHELL
 end
