@@ -24,7 +24,7 @@ vagrant ssh
 ```
 screen -x
 ```
-### The new image will be created in the `image` directory
+Note: The new image will be created in the `image` directory
 
 ## Built with
 
