@@ -7,7 +7,7 @@ This is the first iteration of the VM with [treehouse-builder](https://github.co
 ### Prerequisites
 
  * 8GB of available disk space
- * `4`GB RAM
+ * 4GB RAM
  * Vagrant
 
 ### Getting Started
