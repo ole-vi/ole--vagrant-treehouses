@@ -1,12 +1,34 @@
-This so far is the first iteration of VM with [treehouse-builder](https://github.com/ole-vi/treehouse-builder) so also non-Linux sytems can play with raspberry pi image modifications
+# ole--vagrant-treehouses
+
+This is the first iteration of the VM with [treehouse-builder](https://github.com/ole-vi/treehouse-builder) to enable Raspberry Pi image customization on non-Linux systems.
+
+## Instructions
+
+### Prerequisites
+
+ * 8GB of available disk space
+ * 4GB RAM
+ * Vagrant
+ * VirtualBox
+
+### Getting Started
 
 ```
 git clone https://github.com/ole-vi/ole--vagrant-treehouses.git
 cd ole--vagrant-treehouses
 vagrant up
 vagrant ssh
+```
+
+### To view building process messages
+
+```
 screen -x
 ```
-to see building process messages
+Note: The new image will be created in the `image` directory
 
-new image will be created at `image` directory
+## Built with
+
+* [Vagrant](https://www.vagrantup.com)
+* [VirtualBox](https://www.virtualbox.org)
+* [treehouse-builder](https://github.com/ole-vi/treehouse-builder)
