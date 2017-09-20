@@ -78,8 +78,10 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
+    sudo curl -k -O -sL https://deb.nodesource.com/setup_8.x
+    sudo bash setup_8.x
     sudo aptitude update
-    sudo aptitude install -y kpartx qemu-user-static parted aria2
+    sudo aptitude install -y kpartx qemu-user-static parted aria2 nodejs
     git clone https://github.com/ole-vi/treehouse-builder.git
     cd treehouse-builder/
     #git checkout <branch>
