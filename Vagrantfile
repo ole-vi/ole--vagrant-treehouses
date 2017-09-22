@@ -1,6 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+Dir.mkdir("workspace") unless Dir.exist?("workspace")
+
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
@@ -50,7 +52,7 @@ Vagrant.configure(2) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.synced_folder "workspace", "/vagrant"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -61,7 +63,8 @@ Vagrant.configure(2) do |config|
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
-    vb.memory = "2222"
+    vb.memory = 4096
+    vb.cpus = 4
   end
   #
   # View the documentation for the provider you are using for more
@@ -82,11 +85,20 @@ Vagrant.configure(2) do |config|
     sudo bash setup_8.x
     sudo aptitude update
     sudo aptitude install -y kpartx qemu-user-static parted aria2 nodejs
+    cd /vagrant/
     git clone https://github.com/ole-vi/treehouse-builder.git
-    cd treehouse-builder/
-    #git checkout <branch>
-    mkdir -p /vagrant/images
-    ln -s /vagrant/images images
-    sudo -u vagrant screen -dmS build sudo bash -c 'export PATH="$PATH:/sbin:/usr/sbin";cd /home/vagrant/treehouse-builder;./treehouse-builder --chroot'
+    cd treehouse-builder
+    git checkout vagrant
+    cd ..
+    wget http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-07-05/2017-07-05-raspbian-jessie.zip.torrent
+    mkdir -p /vagrant/images    
+    cd /vagrant/images
+    aria2c /vagrant/2017-07-05-raspbian-jessie.zip.torrent --seed-time 0
+    unzip 2017-07-05-raspbian-jessie.zip
+    mv *.img input.img
+    rm *.zip
+    sudo cp -r /vagrant/treehouse-builder/build.sh /usr/local/bin/buildimage
+    sudo chmod +x /usr/local/bin/buildimage
   SHELL
+
 end
