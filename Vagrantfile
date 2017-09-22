@@ -99,6 +99,8 @@ Vagrant.configure(2) do |config|
     rm *.zip
     sudo cp -r /vagrant/treehouse-builder/build.sh /usr/local/bin/buildimage
     sudo chmod +x /usr/local/bin/buildimage
+    cd /vagrant/treehouse-builder
+    python get_ssh_keys.py
   SHELL
 
 end
