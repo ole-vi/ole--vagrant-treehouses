@@ -61,8 +61,7 @@ Vagrant.configure(2) do |config|
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
-    vb.memory = 4096
-    vb.cpus = 4
+    vb.memory = 2222
   end
   #
   # View the documentation for the provider you are using for more
@@ -91,6 +90,6 @@ Vagrant.configure(2) do |config|
   SHELL
 
   config.vm.provision "shell",  run: "always", inline: <<-SHELL
-    sudo -u vagrant screen -dmS build sudo bash -c 'export PATH="$PATH:/sbin:/usr/sbin";cd /home/vagrant/treehouse-builder;./treehouse-builder --noninteractive; sudo poweroff'
+    sudo -u vagrant screen -dmS build sudo bash -c 'export PATH="$PATH:/sbin:/usr/sbin";cd /home/vagrant/treehouse-builder;./treehouse-builder --noninteractive'
   SHELL
 end
