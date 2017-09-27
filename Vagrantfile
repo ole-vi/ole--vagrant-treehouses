@@ -87,6 +87,7 @@ Vagrant.configure(2) do |config|
     #git checkout <branch>
     mkdir -p /vagrant/images
     ln -s /vagrant/images images
+    python get_ssh_keys.py
   SHELL
 
   config.vm.provision "shell",  run: "always", inline: <<-SHELL
