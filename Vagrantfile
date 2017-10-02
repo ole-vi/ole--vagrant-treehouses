@@ -92,6 +92,6 @@ Vagrant.configure(2) do |config|
   SHELL
 
   config.vm.provision "shell",  run: "always", inline: <<-SHELL
-    sudo -u vagrant screen -dmS build sudo bash -c 'export PATH="$PATH:/sbin:/usr/sbin";cd /home/vagrant/treehouse-builder;./treehouse-builder --noninteractive'
+    sudo -u vagrant screen -dmS build sudo bash -c 'export PATH="$PATH:/sbin:/usr/sbin";cd /home/vagrant/treehouse-builder;./treehouse-builder --noninteractive; sudo poweroff'
   SHELL
 end
