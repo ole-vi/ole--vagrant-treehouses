@@ -17,17 +17,17 @@ This is the first iteration of the VM with [treehouse-builder](https://github.co
 git clone https://github.com/ole-vi/ole--vagrant-treehouses.git
 cd ole--vagrant-treehouses
 vagrant up
-vagrant ssh
 ```
 
 
 ### Retrieve builds
 
-Once the machine is powered off, head over to the `treehouse-builder/images` directory. There should be a few files in that directory. The .zip file is the unmodified base image, which is downloaded by the script when executed. The .img file is the new customized image and is now ready to be burned onto the microSD card.
+When you are done making your image power off the virtual machine. Once the machine is powered off, head over to the `treehouse-builder/images` directory. There should be a few files in that directory. The .zip file is the unmodified base image, which is downloaded by the script when executed. The .img file is the new customized image and is now ready to be burned onto the microSD card.
 
 ### To view building process messages
 
 ```
+vagrant ssh
 screen -x
 ```
 Note: The new image will be created in the `image` directory
