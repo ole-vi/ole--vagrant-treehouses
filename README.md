@@ -20,6 +20,11 @@ vagrant up
 vagrant ssh
 ```
 
+
+### Retrieve builds
+
+Once the machine is powered off, head over to the `treehouse-builder/images` directory. There should be a few files in that directory. The .zip file is the unmodified base image, which is downloaded by the script when executed. The .img file is the new customized image and is now ready to be burned onto the microSD card.
+
 ### To view building process messages
 
 ```
