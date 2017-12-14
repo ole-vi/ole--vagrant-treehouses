@@ -82,7 +82,7 @@ Vagrant.configure(2) do |config|
     sudo curl -k -O -sL https://deb.nodesource.com/setup_8.x
     sudo bash setup_8.x
     sudo aptitude update
-    sudo aptitude install -y kpartx qemu-user-static parted aria2 nodejs
+    sudo aptitude install -y kpartx qemu-user-static parted aria2 nodejs jq curl
     git clone https://github.com/ole-vi/treehouse-builder.git
     cd treehouse-builder/
     #git checkout <branch>
