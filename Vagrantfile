@@ -83,7 +83,7 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     sudo aptitude update
-    sudo aptitude install -y kpartx qemu-user-static parted aria2
+    sudo aptitude install -y kpartx qemu-user-static parted aria2 jq
     git clone https://github.com/ole-vi/treehouse-builder.git
     cd treehouse-builder/
     #git checkout <branch>
