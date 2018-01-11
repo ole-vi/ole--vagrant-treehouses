@@ -87,8 +87,9 @@ Vagrant.configure(2) do |config|
     git clone https://github.com/ole-vi/treehouse-builder.git
     cd treehouse-builder/
     #git checkout <branch>
-    mkdir -p /vagrant/images
+    mkdir -p /vagrant/images /vagrant/apt_cache
     ln -s /vagrant/images images
+    ln -s /vagrant/apt_cache apt_cache
   SHELL
 
   config.vm.provision "shell",  run: "always", inline: <<-SHELL
